@@ -35,6 +35,7 @@ namespace PrzetwarzanieObrazow
             this.AdjustBrightnessContrastGammaButton = new System.Windows.Forms.Button();
             this.HistogramButton = new System.Windows.Forms.Button();
             this.StretchHistogramButton = new System.Windows.Forms.Button();
+            this.EqualizeHistogramButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +98,22 @@ namespace PrzetwarzanieObrazow
             this.StretchHistogramButton.UseVisualStyleBackColor = true;
             this.StretchHistogramButton.Click += new System.EventHandler(this.StretchHistogramButton_Click);
             // 
+            // EqualizeHistogramButton
+            // 
+            this.EqualizeHistogramButton.Location = new System.Drawing.Point(317, 385);
+            this.EqualizeHistogramButton.Name = "EqualizeHistogramButton";
+            this.EqualizeHistogramButton.Size = new System.Drawing.Size(139, 23);
+            this.EqualizeHistogramButton.TabIndex = 6;
+            this.EqualizeHistogramButton.Text = "Wyrównaj Histogram";
+            this.EqualizeHistogramButton.UseVisualStyleBackColor = true;
+            this.EqualizeHistogramButton.Click += new System.EventHandler(this.EqualizeHistogramButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EqualizeHistogramButton);
             this.Controls.Add(this.StretchHistogramButton);
             this.Controls.Add(this.HistogramButton);
             this.Controls.Add(this.AdjustBrightnessContrastGammaButton);
@@ -123,6 +135,7 @@ namespace PrzetwarzanieObrazow
         private System.Windows.Forms.Button AdjustBrightnessContrastGammaButton;
         private System.Windows.Forms.Button HistogramButton;
         private System.Windows.Forms.Button StretchHistogramButton;
+        private System.Windows.Forms.Button EqualizeHistogramButton;
     }
 }
 

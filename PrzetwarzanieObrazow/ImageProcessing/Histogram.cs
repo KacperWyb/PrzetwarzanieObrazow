@@ -7,6 +7,53 @@ namespace PrzetwarzanieObrazow.ImageProcessing
 {
     class Histogram
     {
+        public static Bitmap EqualizeHistogram(Bitmap image)
+        {
+            // Oblicz wartości histogramu obrazu
+            int[] histogram = new int[256];
+            for (int i = 0; i < image.Width; i++)
+            {
+                for (int j = 0; j < image.Height; j++)
+                {
+                    Color color = image.GetPixel(i, j);
+                    int gray = (int)(color.R * 0.299 + color.G * 0.587 + color.B * 0.114);
+                    histogram[gray]++;
+                }
+            }
+
+            // Oblicz funkcję dystrybuanty (CDF)
+            int[] cdf = new int[256];
+            cdf[0] = histogram[0];
+            for (int i = 1; i < 256; i++)
+            {
+                cdf[i] = cdf[i - 1] + histogram[i];
+            }
+
+            // Przeskaluj wartości pikseli w obrazie
+            int min = cdf.Min();
+            int max = cdf.Max();
+            int[] newValues = new int[256];
+            for (int i = 0; i < 256; i++)
+            {
+                newValues[i] = (int)(((double)(cdf[i] - min) / (image.Width * image.Height - min)) * 255);
+            }
+
+            Bitmap result = new Bitmap(image.Width, image.Height);
+
+            for (int i = 0; i < image.Width; i++)
+            {
+                for (int j = 0; j < image.Height; j++)
+                {
+                    Color color = image.GetPixel(i, j);
+                    int gray = (int)(color.R * 0.299 + color.G * 0.587 + color.B * 0.114);
+                    int newValue = newValues[gray];
+                    result.SetPixel(i, j, Color.FromArgb(newValue, newValue, newValue));
+                }
+            }
+
+            return result;
+        }
+
         public static Bitmap StretchHistogram(Bitmap image)
         {
             int[] histogram = new int[256];

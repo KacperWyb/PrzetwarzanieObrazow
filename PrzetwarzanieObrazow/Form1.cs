@@ -50,5 +50,10 @@ namespace PrzetwarzanieObrazow
             Bitmap stretchedImage = Histogram.StretchHistogram(OurImage);
             pictureBox1.Image = Histogram.CreateHistogram(stretchedImage);
         }
+
+        private void EqualizeHistogramButton_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Histogram.EqualizeHistogram(OurImage);
+        }
     }
 }
