@@ -44,5 +44,11 @@ namespace PrzetwarzanieObrazow
         {
             pictureBox1.Image = Histogram.CreateHistogram(OurImage);
         }
+
+        private void StretchHistogramButton_Click(object sender, EventArgs e)
+        {
+            Bitmap stretchedImage = Histogram.StretchHistogram(OurImage);
+            pictureBox1.Image = Histogram.CreateHistogram(stretchedImage);
+        }
     }
 }
