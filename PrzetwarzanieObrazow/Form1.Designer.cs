@@ -33,6 +33,7 @@ namespace PrzetwarzanieObrazow
             this.ResetButton = new System.Windows.Forms.Button();
             this.ConvertToGrayscale = new System.Windows.Forms.Button();
             this.AdjustBrightnessContrastGammaButton = new System.Windows.Forms.Button();
+            this.HistogramButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,11 +76,22 @@ namespace PrzetwarzanieObrazow
             this.AdjustBrightnessContrastGammaButton.UseVisualStyleBackColor = true;
             this.AdjustBrightnessContrastGammaButton.Click += new System.EventHandler(this.AdjustBrightnessContrastGammaButton_Click);
             // 
+            // HistogramButton
+            // 
+            this.HistogramButton.Location = new System.Drawing.Point(592, 335);
+            this.HistogramButton.Name = "HistogramButton";
+            this.HistogramButton.Size = new System.Drawing.Size(75, 23);
+            this.HistogramButton.TabIndex = 4;
+            this.HistogramButton.Text = "Histogram";
+            this.HistogramButton.UseVisualStyleBackColor = true;
+            this.HistogramButton.Click += new System.EventHandler(this.HistogramButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.HistogramButton);
             this.Controls.Add(this.AdjustBrightnessContrastGammaButton);
             this.Controls.Add(this.ConvertToGrayscale);
             this.Controls.Add(this.ResetButton);
@@ -97,6 +109,7 @@ namespace PrzetwarzanieObrazow
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Button ConvertToGrayscale;
         private System.Windows.Forms.Button AdjustBrightnessContrastGammaButton;
+        private System.Windows.Forms.Button HistogramButton;
     }
 }
 

@@ -82,5 +82,17 @@ namespace PrzetwarzanieObrazow.ImageProcessing
 
             return gammaLUT;
         }
+
+        public static Bitmap ConvertToNonIndexedBitmap(Bitmap image)
+        {
+            // Clone the image with a supported pixel format
+            Bitmap newImage = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppArgb);
+            using (Graphics g = Graphics.FromImage(newImage))
+            {
+                g.DrawImage(image, new Rectangle(0, 0, newImage.Width, newImage.Height));
+            }
+            return newImage;
+        }
+
     }
 }

@@ -39,5 +39,12 @@ namespace PrzetwarzanieObrazow
         {
             pictureBox1.Image = ImageProcessor.AdjustBrightnessContrastGamma(OurImage, 50, 50, 0.5f);
         }
+
+        private void HistogramButton_Click(object sender, EventArgs e)
+        {
+            Bitmap image = ImageProcessor.ConvertToNonIndexedBitmap(OurImage);
+            pictureBox1.Image = Histogram.CreateHistogram(image);
+
+        }
     }
 }
