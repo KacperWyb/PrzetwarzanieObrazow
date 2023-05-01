@@ -42,9 +42,7 @@ namespace PrzetwarzanieObrazow
 
         private void HistogramButton_Click(object sender, EventArgs e)
         {
-            Bitmap image = ImageProcessor.ConvertToNonIndexedBitmap(OurImage);
-            pictureBox1.Image = Histogram.CreateHistogram(image);
-
+            pictureBox1.Image = Histogram.CreateHistogram(OurImage);
         }
     }
 }
